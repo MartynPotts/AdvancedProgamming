@@ -1,34 +1,41 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace AwayDayPlanner
 {
-    class Address
+    public class Address
     {
         [Key]
         public int AddressID { get; set; }
         [Required, MaxLength(25)]
         public string BuildingNameNumber { get; set; }
-        [MaxLength(25)]
-        public City CityName {get; set;}
         [Required, MaxLength(8)]
         public string Postcode { get; set; }
+
+        [Display(Name ="City")]
+        public virtual int CityID { get; set; }
+        [ForeignKey("CityID")]
+        public virtual City CityName { get; set; }
+
+        public ICollection<Client> Clients { get; set; }
 
 
         public Address()
         {
         }
 
-        public Address(int addressID, string buildingNameNumber, City cityName, string postcode)
+        public Address(int addressID, string buildingNameNumber, string postcode, int cityID, City cityName)
         {
             AddressID = addressID;
             BuildingNameNumber = buildingNameNumber;
-            CityName = cityName;
             Postcode = postcode;
+            CityID = cityID;
+            CityName = cityName;
         }
     }
 }
