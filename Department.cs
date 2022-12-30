@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AwayDayPlanner
 {
-    class Department
+    public class Department
     {
         [Key]
         public int DepartmentID { get; set; }

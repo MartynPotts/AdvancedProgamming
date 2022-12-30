@@ -7,12 +7,14 @@ using System.Threading.Tasks;
 
 namespace AwayDayPlanner
 {
-    class Company
+    public class Company
     {
         [Key]
         public int CompanyID { get; set; }
         [Required, MaxLength(25)]
         public string CompanyName { get; set; }
+
+        public ICollection<Client> Clients { get; set; }
 
         public Company()
         {
