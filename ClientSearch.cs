@@ -24,6 +24,15 @@ namespace AwayDayPlanner
             InitializeComponent();
         }
 
+        /*  TODO: implement search box - SELECT * WHERE COMPANY NAME = "COMPANY NAME";
+         *        create an add new client button to form
+         *        
+         *        ################################################################
+         *        Create second form - view client
+         *        populate with the data in editable fields
+         *        create a save changes button
+         *        create a button to launch client request feature
+        */
         
         private void ClientSearch_Load(object sender, EventArgs e)
         {
@@ -48,56 +57,10 @@ namespace AwayDayPlanner
             dgvClientsList.AllowUserToDeleteRows = false;
             dgvClientsList.AllowUserToAddRows = false;
             for (int i = 0; i < dgvClientsList.ColumnCount; i++)
-                dgvClientsList.Columns[i].ReadOnly = true;
-
-            using (var mycontext = new Context())
-            {
-                City city = new City
-                {
-                    CityName = "Newcastle"
-                };
-                
-                Address address = new Address
-                {
-                    BuildingNameNumber = "CIS",
-                    Postcode = "NE1 8ST",
-                    CityName = city
-                };
-
-                Company company = new Company
-                {
-                    CompanyName = "Northumbria"
-                };
-
-                Department department = new Department
-                {
-                    DepartmentName = "Computer and Information Sciences"
-                };
-
-                Client client = new Client
-                {
-                    ContactName = "Martyn Amos",
-                    ContactEmail = "Martyn.Amos@Northumbria.ac.uk",
-                    ContactPhoneNumber = "+441912437655"
-                };
-
-                client.Address = address;
-                client.Company = company;
-                client.Department = department;
-
-                mycontext.City.Add(city);
-                mycontext.Addresses.Add(address);
-                mycontext.Companies.Add(company);
-                mycontext.Departments.Add(department);
-                mycontext.Clients.Add(client);
-                mycontext.SaveChanges();
-
-                
-            }
-           
+                dgvClientsList.Columns[i].ReadOnly = true;           
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void BtnSearch_Click(object sender, EventArgs e)
         {
 
         }
