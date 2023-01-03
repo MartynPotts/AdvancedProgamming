@@ -14,16 +14,14 @@ namespace AwayDayPlanner
         [Required, MaxLength(25)]
         public string CompanyName { get; set; }
 
-        public ICollection<Client> Clients { get; set; }
+        public virtual ICollection<Department> Departments { get; set; }
+        public virtual ICollection<Address> Addresses { get; set; }
 
         public Company()
         {
+            Departments = new List<Department>();
+            Addresses = new List<Address>();
         }
-
-        public Company(int companyID, string companyName)
-        {
-            CompanyID = companyID;
-            CompanyName = companyName;
-        }
+       
     }
 }

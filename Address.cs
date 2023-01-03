@@ -22,20 +22,11 @@ namespace AwayDayPlanner
         [ForeignKey("CityID")]
         public virtual City CityName { get; set; }
 
-        public ICollection<Client> Clients { get; set; }
+        public ICollection<City> Cities { get; set; }
 
-
-        public Address()
+        Address()
         {
-        }
-
-        public Address(int addressID, string buildingNameNumber, string postcode, int cityID, City cityName)
-        {
-            AddressID = addressID;
-            BuildingNameNumber = buildingNameNumber;
-            Postcode = postcode;
-            CityID = cityID;
-            CityName = cityName;
+            Cities = new List<City>();
         }
     }
 }
