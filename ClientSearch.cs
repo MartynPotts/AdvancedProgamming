@@ -26,9 +26,9 @@ namespace AwayDayPlanner
         {
             using (var mycontext = new Context())
             {
-                
-                
+
             }
+           
         }
     }
 }

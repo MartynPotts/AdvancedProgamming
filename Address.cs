@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 
 namespace AwayDayPlanner
 {
-    public class Address
+    [Table("Address")]
+    public partial class Address
     {
         [Key]
         public int AddressID { get; set; }
@@ -22,11 +23,6 @@ namespace AwayDayPlanner
         [ForeignKey("CityID")]
         public virtual City CityName { get; set; }
 
-        public ICollection<City> Cities { get; set; }
-
-        Address()
-        {
-            Cities = new List<City>();
-        }
+       public ICollection<Client> Clients { get; set; }
     }
 }

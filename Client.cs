@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace AwayDayPlanner
 {
+    [Table("Client")]
     public class Client
     {
         [Key]
