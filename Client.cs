@@ -24,17 +24,17 @@ namespace AwayDayPlanner
         [ForeignKey("CompanyID")]
         public virtual Company Company { get; set; }
 
-        [Required]
-        public Department Department { get; set; }
+        [Display(Name ="Department")]
+        public virtual int DepartmentID { get; set; }
+        [ForeignKey("DepartmentID")]
+        public virtual Department Department { get; set; }
 
+        [Display(Name ="Address")]
+        public virtual int AddressID { get; set; }
+        [ForeignKey("AddressID")]
+        public virtual Address Address { get; set; }
         
-
-        [Required]
-        public Address Address { get; set; }
-
-        public Client()
-        {
-        }
+       
 
         
     }

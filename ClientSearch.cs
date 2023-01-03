@@ -26,19 +26,7 @@ namespace AwayDayPlanner
         {
             using (var mycontext = new Context())
             {
-                City City1 = new City(1, "Newcastle");
-                Address Address1 = new Address(1, "CIS", City1, "NE1");
-                Company Company1 = new Company(1, "Northumbria University");
-                Department Department1 = new Department(1, "Computer and Information Sciences");
-                Client Client1 = new Client(1, "Martyn Amos", Company1, Department1, "Martyn.Amos@Northumbria.ac.uk", "+441912437655", Address1);
-
-                mycontext.City.Add(City1);
-                mycontext.Addresses.Add(Address1);
-                mycontext.Companies.Add(Company1);
-                mycontext.Departments.Add(Department1);
-                mycontext.Clients.Add(Client1);
-
-                mycontext.SaveChanges();
+                
                 
             }
         }

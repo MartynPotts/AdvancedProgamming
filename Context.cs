@@ -9,10 +9,11 @@ namespace AwayDayPlanner
 {
     public partial class Context : DbContext
     {
-        public Context() : base("ClientsDB")
+        public Context() : base("name=conString")
         {
-            //this.Configuration.ProxyCreationEnabled = false; 
-            //this.Configuration.LazyLoadingEnabled = false;
+           // Database.SetInitializer(new MigrateDatabaseToLatestVersion<>)
+            this.Configuration.ProxyCreationEnabled = false; 
+            this.Configuration.LazyLoadingEnabled = false;
         }
 
         public DbSet<Client> Clients { get; set; }
