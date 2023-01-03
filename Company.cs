@@ -11,10 +11,19 @@ namespace AwayDayPlanner
     [Table("Company")]
     public class Company
     {
-        [Key]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int CompanyID { get; set; }
         [Required, MaxLength(25)]
         public string CompanyName { get; set; }
 
+        public Company()
+        {
+
+        }
+        public Company(int companyID, string companyName)
+        {
+            CompanyID = companyID;
+            CompanyName = companyName;
+        }
     }
 }

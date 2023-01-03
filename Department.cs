@@ -11,11 +11,21 @@ namespace AwayDayPlanner
     [Table("Department")]
     public class Department
     {
-        [Key]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int DepartmentID { get; set; }
         [Required, MaxLength(50)]
         public string DepartmentName { get; set; }
 
+        public Department()
+        {
+
+        }
+
+        public Department(int departmentID, string departmentName)
+        {
+            DepartmentID = departmentID;
+            DepartmentName = departmentName;
+        }
     }
 
 }
