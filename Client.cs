@@ -8,9 +8,10 @@ using System.Threading.Tasks;
 
 namespace AwayDayPlanner
 {
+    [Table("Client")]
     public class Client
     {
-        [Key]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ClientID { get; set; }
         [Required, MaxLength(25)]
         public string ContactName { get; set; }
@@ -33,9 +34,20 @@ namespace AwayDayPlanner
         public virtual int AddressID { get; set; }
         [ForeignKey("AddressID")]
         public virtual Address Address { get; set; }
-        
-       
 
-        
+        public Client()
+        {
+
+        }
+        public Client(int clientID, string contactName, string contactEmail, string contactPhoneNumber, Company company, Department department, Address address)
+        {
+            ClientID = clientID;
+            ContactName = contactName;
+            ContactEmail = contactEmail;
+            ContactPhoneNumber = contactPhoneNumber;
+            Company = company;
+            Department = department;
+            Address = address;
+        }
     }
 }

@@ -8,9 +8,10 @@ using System.Threading.Tasks;
 
 namespace AwayDayPlanner
 {
-    public class Address
+    [Table("Address")]
+    public partial class Address
     {
-        [Key]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int AddressID { get; set; }
         [Required, MaxLength(25)]
         public string BuildingNameNumber { get; set; }
@@ -22,11 +23,16 @@ namespace AwayDayPlanner
         [ForeignKey("CityID")]
         public virtual City CityName { get; set; }
 
-        public ICollection<City> Cities { get; set; }
-
-        Address()
+        public Address()
         {
-            Cities = new List<City>();
+        }
+
+        public Address(int addressID, string buildingNameNumber, string postcode, City cityName)
+        {
+            AddressID = addressID;
+            BuildingNameNumber = buildingNameNumber;
+            Postcode = postcode;
+            CityName = cityName;
         }
     }
 }
