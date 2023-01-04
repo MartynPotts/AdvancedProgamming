@@ -24,11 +24,9 @@ namespace AwayDayPlanner
             InitializeComponent();
         }
 
-        /*  TODO: implement search box - SELECT * WHERE COMPANY NAME = "COMPANY NAME";
-         *        create an add new client button to form
+        /*  TODO: create an add new client button to form
          *        
          *        ################################################################
-         *        Create second form - view client
          *        populate with the data in editable fields
          *        create a save changes button
          *        create a button to launch client request feature
@@ -44,7 +42,7 @@ namespace AwayDayPlanner
             Tables = new DataSet("Clients");
             allTables.Fill(Tables);
 
-            string JoinTable = "SELECT ContactName,ContactEmail,ContactPhoneNumber,CompanyName,DepartmentName, BuildingNameNumber, CityName, Postcode FROM Client " +
+            string JoinTable = "SELECT ClientID, ContactName,ContactEmail,ContactPhoneNumber,CompanyName,DepartmentName, BuildingNameNumber, CityName, Postcode FROM Client " +
                 "LEFT JOIN Company ON Client.CompanyID = Company.CompanyID " +
                 "LEFT JOIN Department ON Client.DepartmentID = Department.DepartmentID " +
                 "LEFT JOIN Address ON Client.AddressID = Address.AddressID " +
@@ -56,13 +54,41 @@ namespace AwayDayPlanner
             dgvClientsList.DataSource = ClientsTable.Tables[0];
             dgvClientsList.AllowUserToDeleteRows = false;
             dgvClientsList.AllowUserToAddRows = false;
+            dgvClientsList.Columns["ClientID"].Width = -1;
             for (int i = 0; i < dgvClientsList.ColumnCount; i++)
                 dgvClientsList.Columns[i].ReadOnly = true;           
         }
 
-        private void BtnSearch_Click(object sender, EventArgs e)
+        private void DgvClientsList_CellContentDoubleClick(Object sender, DataGridViewCellEventArgs e)
         {
+            RowSelected(dgvClientsList.CurrentCell.RowIndex);
+        }
 
+        private void DgvClientsList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            RowSelected(dgvClientsList.CurrentCell.RowIndex);
+        }
+
+        private void RowSelected(int index)
+        {
+            DataRow dr = ClientsTable.Tables[0].Rows[index];
+            int clientID = dr.Field<int>(0);
+            ValidateClientDetails validateClientDetails = new ValidateClientDetails(ClientsTable, clientID);
+            this.Hide();
+            
+            validateClientDetails.ShowDialog();
+            this.Show();
+            
+        }
+
+        private void TxtCompanySearch_TextChanged(object sender, EventArgs e)
+        {
+            (dgvClientsList.DataSource as DataTable).DefaultView.RowFilter = string.Format("CompanyName LIKE '{0}%'", txtCompanySearch.Text);
+        }
+
+        private void TxtClientSearch_TextChanged(object sender, EventArgs e)
+        {
+            (dgvClientsList.DataSource as DataTable).DefaultView.RowFilter = string.Format("ContactName LIKE '{0}%'", txtClientSearch.Text);
         }
     }
 }
