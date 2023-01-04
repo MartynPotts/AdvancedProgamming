@@ -24,31 +24,41 @@ namespace AwayDayPlanner
 
         private void ValidateClientDetails_Load(object sender, EventArgs e)
         {
+            Console.WriteLine(Clients.Tables[0].ToString());
             var query = from Client in Clients.Tables[0].AsEnumerable()
-                        join Company in Clients.Tables[1].AsEnumerable()
-                        on Client.Field<string>(1) equals Company.Field<string>(0)
                         where Client.Field<int>(0) == ClientID
                         select new
                         {
-                           ContactName = Client.Field<string>("ContactName"),
-                           ContactEmail = Client.Field<string>("ContactEmail"),
-                           ContactPhoneNumber = Client.Field<string>("ContactPhoneNumber"),
-                           Company = Client.Field<string>("Company"),
-                           //department = client.field<string>("department"),
-                           //buildingnamenumber = client.field<string>("buildingnamenumber"),
-                           //city = client.field<string>("city"),
-                           //postcode = client.field<string>("postcode")
+                            contactName = Client.Field<string>(1),
+                            contactEmail = Client.Field<string>(2),
+                            contactNumber = Client.Field<string>(3),
+                            companyName = Client.Field<string>(4),
+                            department = Client.Field<string>(5),
+                            buildingNameNumber = Client.Field<string>(6),
+                            city = Client.Field<string>(7),
+                            postcode = Client.Field<string>(8)
                         };
-            var ClientDetails = query.ToList();
-            txtContactName.Text = ClientDetails[0].ContactName;
-            txtContactEmail.Text = ClientDetails[1].ContactEmail;
-            txtContactNumber.Text = ClientDetails[2].ContactPhoneNumber;
-            txtCompany.Text = ClientDetails[3].Company;
-            //txtDepartment.Text = ClientDetails[4].Department;
-            //txtBuildingNameNUmber.Text = ClientDetails[5].BuildingNameNumber;
-            //txtCity.Text = ClientDetails[6].City;
-            //txtPostcode.Text = ClientDetails[7].Postcode;
-              
+            var clientList = query.ToList();
+            txtContactName.Text = clientList[0].contactName;
+            txtContactEmail.Text = clientList[0].contactEmail;
+            txtContactNumber.Text = clientList[0].contactNumber;
+            txtCompany.Text = clientList[0].companyName;
+            txtDepartment.Text = clientList[0].department;
+            txtBuildingNameNumber.Text = clientList[0].buildingNameNumber;
+            txtCity.Text = clientList[0].city;
+            txtPostcode.Text = clientList[0].postcode;
+        }
+
+        private void ChkVerify_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkVerify.Checked)
+            {
+                btnStartEstimate.Enabled = true;
+            } 
+            else
+            {
+                btnStartEstimate.Enabled = false;
+            }
         }
     }
 }

@@ -42,7 +42,7 @@ namespace AwayDayPlanner
             this.txtContactNumber = new System.Windows.Forms.TextBox();
             this.txtCompany = new System.Windows.Forms.TextBox();
             this.txtDepartment = new System.Windows.Forms.TextBox();
-            this.txtBuildingNameNUmber = new System.Windows.Forms.TextBox();
+            this.txtBuildingNameNumber = new System.Windows.Forms.TextBox();
             this.txtCity = new System.Windows.Forms.TextBox();
             this.txtPostcode = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -131,56 +131,56 @@ namespace AwayDayPlanner
             // 
             this.txtContactName.Location = new System.Drawing.Point(151, 41);
             this.txtContactName.Name = "txtContactName";
-            this.txtContactName.Size = new System.Drawing.Size(100, 20);
+            this.txtContactName.Size = new System.Drawing.Size(209, 20);
             this.txtContactName.TabIndex = 8;
             // 
             // txtContactEmail
             // 
             this.txtContactEmail.Location = new System.Drawing.Point(151, 67);
             this.txtContactEmail.Name = "txtContactEmail";
-            this.txtContactEmail.Size = new System.Drawing.Size(100, 20);
+            this.txtContactEmail.Size = new System.Drawing.Size(209, 20);
             this.txtContactEmail.TabIndex = 9;
             // 
             // txtContactNumber
             // 
             this.txtContactNumber.Location = new System.Drawing.Point(151, 93);
             this.txtContactNumber.Name = "txtContactNumber";
-            this.txtContactNumber.Size = new System.Drawing.Size(100, 20);
+            this.txtContactNumber.Size = new System.Drawing.Size(209, 20);
             this.txtContactNumber.TabIndex = 10;
             // 
             // txtCompany
             // 
             this.txtCompany.Location = new System.Drawing.Point(151, 32);
             this.txtCompany.Name = "txtCompany";
-            this.txtCompany.Size = new System.Drawing.Size(100, 20);
+            this.txtCompany.Size = new System.Drawing.Size(209, 20);
             this.txtCompany.TabIndex = 11;
             // 
             // txtDepartment
             // 
             this.txtDepartment.Location = new System.Drawing.Point(151, 58);
             this.txtDepartment.Name = "txtDepartment";
-            this.txtDepartment.Size = new System.Drawing.Size(100, 20);
+            this.txtDepartment.Size = new System.Drawing.Size(209, 20);
             this.txtDepartment.TabIndex = 12;
             // 
-            // txtBuildingNameNUmber
+            // txtBuildingNameNumber
             // 
-            this.txtBuildingNameNUmber.Location = new System.Drawing.Point(151, 29);
-            this.txtBuildingNameNUmber.Name = "txtBuildingNameNUmber";
-            this.txtBuildingNameNUmber.Size = new System.Drawing.Size(100, 20);
-            this.txtBuildingNameNUmber.TabIndex = 13;
+            this.txtBuildingNameNumber.Location = new System.Drawing.Point(151, 29);
+            this.txtBuildingNameNumber.Name = "txtBuildingNameNumber";
+            this.txtBuildingNameNumber.Size = new System.Drawing.Size(209, 20);
+            this.txtBuildingNameNumber.TabIndex = 13;
             // 
             // txtCity
             // 
             this.txtCity.Location = new System.Drawing.Point(151, 55);
             this.txtCity.Name = "txtCity";
-            this.txtCity.Size = new System.Drawing.Size(100, 20);
+            this.txtCity.Size = new System.Drawing.Size(209, 20);
             this.txtCity.TabIndex = 14;
             // 
             // txtPostcode
             // 
             this.txtPostcode.Location = new System.Drawing.Point(151, 81);
             this.txtPostcode.Name = "txtPostcode";
-            this.txtPostcode.Size = new System.Drawing.Size(100, 20);
+            this.txtPostcode.Size = new System.Drawing.Size(209, 20);
             this.txtPostcode.TabIndex = 15;
             // 
             // groupBox1
@@ -193,7 +193,7 @@ namespace AwayDayPlanner
             this.groupBox1.Controls.Add(this.lblContactName);
             this.groupBox1.Location = new System.Drawing.Point(37, 32);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(277, 147);
+            this.groupBox1.Size = new System.Drawing.Size(451, 147);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Contact Details";
@@ -206,7 +206,7 @@ namespace AwayDayPlanner
             this.groupBox2.Controls.Add(this.lblCompany);
             this.groupBox2.Location = new System.Drawing.Point(37, 199);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(277, 105);
+            this.groupBox2.Size = new System.Drawing.Size(451, 105);
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Company Details";
@@ -215,13 +215,13 @@ namespace AwayDayPlanner
             // 
             this.gbAddress.Controls.Add(this.txtPostcode);
             this.gbAddress.Controls.Add(this.txtCity);
-            this.gbAddress.Controls.Add(this.txtBuildingNameNUmber);
+            this.gbAddress.Controls.Add(this.txtBuildingNameNumber);
             this.gbAddress.Controls.Add(this.lblPostcode);
             this.gbAddress.Controls.Add(this.lblCity);
             this.gbAddress.Controls.Add(this.lblBuildingNameNumber);
             this.gbAddress.Location = new System.Drawing.Point(37, 327);
             this.gbAddress.Name = "gbAddress";
-            this.gbAddress.Size = new System.Drawing.Size(277, 124);
+            this.gbAddress.Size = new System.Drawing.Size(451, 124);
             this.gbAddress.TabIndex = 18;
             this.gbAddress.TabStop = false;
             this.gbAddress.Text = "Address";
@@ -229,12 +229,13 @@ namespace AwayDayPlanner
             // chkVerify
             // 
             this.chkVerify.AutoSize = true;
-            this.chkVerify.Location = new System.Drawing.Point(37, 458);
+            this.chkVerify.Location = new System.Drawing.Point(144, 457);
             this.chkVerify.Name = "chkVerify";
             this.chkVerify.Size = new System.Drawing.Size(253, 17);
             this.chkVerify.TabIndex = 19;
             this.chkVerify.Text = "I have verified these details and they are correct";
             this.chkVerify.UseVisualStyleBackColor = true;
+            this.chkVerify.CheckedChanged += new System.EventHandler(this.ChkVerify_CheckedChanged);
             // 
             // btnStartEstimate
             // 
@@ -250,7 +251,7 @@ namespace AwayDayPlanner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(376, 562);
+            this.ClientSize = new System.Drawing.Size(510, 594);
             this.Controls.Add(this.btnStartEstimate);
             this.Controls.Add(this.chkVerify);
             this.Controls.Add(this.gbAddress);
@@ -285,7 +286,7 @@ namespace AwayDayPlanner
         private System.Windows.Forms.TextBox txtContactNumber;
         private System.Windows.Forms.TextBox txtCompany;
         private System.Windows.Forms.TextBox txtDepartment;
-        private System.Windows.Forms.TextBox txtBuildingNameNUmber;
+        private System.Windows.Forms.TextBox txtBuildingNameNumber;
         private System.Windows.Forms.TextBox txtCity;
         private System.Windows.Forms.TextBox txtPostcode;
         private System.Windows.Forms.GroupBox groupBox1;

@@ -25,11 +25,8 @@ namespace AwayDayPlanner
         }
 
         /*  TODO: create an add new client button to form
-         *        
          *        ################################################################
-         *        populate with the data in editable fields
          *        create a save changes button
-         *        create a button to launch client request feature
         */
         
         private void ClientSearch_Load(object sender, EventArgs e)
@@ -75,7 +72,6 @@ namespace AwayDayPlanner
             int clientID = dr.Field<int>(0);
             ValidateClientDetails validateClientDetails = new ValidateClientDetails(ClientsTable, clientID);
             this.Hide();
-            
             validateClientDetails.ShowDialog();
             this.Show();
             
