@@ -34,6 +34,7 @@ namespace AwayDayPlanner
             this.lblClientName = new System.Windows.Forms.Label();
             this.lblCompanyName = new System.Windows.Forms.Label();
             this.txtClientSearch = new System.Windows.Forms.TextBox();
+            this.btnAddNewClient = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientsList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,8 +58,6 @@ namespace AwayDayPlanner
             this.dgvClientsList.ReadOnly = true;
             this.dgvClientsList.Size = new System.Drawing.Size(747, 257);
             this.dgvClientsList.TabIndex = 2;
-            this.dgvClientsList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvClientsList_CellContentClick);
-            this.dgvClientsList.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvClientsList_CellContentDoubleClick);
             // 
             // lblClientName
             // 
@@ -86,11 +85,22 @@ namespace AwayDayPlanner
             this.txtClientSearch.TabIndex = 5;
             this.txtClientSearch.TextChanged += new System.EventHandler(this.TxtClientSearch_TextChanged);
             // 
+            // btnAddNewClient
+            // 
+            this.btnAddNewClient.Location = new System.Drawing.Point(579, 31);
+            this.btnAddNewClient.Name = "btnAddNewClient";
+            this.btnAddNewClient.Size = new System.Drawing.Size(96, 48);
+            this.btnAddNewClient.TabIndex = 6;
+            this.btnAddNewClient.Text = "Add New Client";
+            this.btnAddNewClient.UseVisualStyleBackColor = true;
+            this.btnAddNewClient.Click += new System.EventHandler(this.btnAddNewClient_Click);
+            // 
             // ClientSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(926, 533);
+            this.Controls.Add(this.btnAddNewClient);
             this.Controls.Add(this.txtClientSearch);
             this.Controls.Add(this.lblCompanyName);
             this.Controls.Add(this.lblClientName);
@@ -112,5 +122,6 @@ namespace AwayDayPlanner
         private System.Windows.Forms.Label lblClientName;
         private System.Windows.Forms.Label lblCompanyName;
         private System.Windows.Forms.TextBox txtClientSearch;
+        private System.Windows.Forms.Button btnAddNewClient;
     }
 }

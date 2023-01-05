@@ -50,6 +50,7 @@ namespace AwayDayPlanner
             this.gbAddress = new System.Windows.Forms.GroupBox();
             this.chkVerify = new System.Windows.Forms.CheckBox();
             this.btnStartEstimate = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.gbAddress.SuspendLayout();
@@ -133,6 +134,7 @@ namespace AwayDayPlanner
             this.txtContactName.Name = "txtContactName";
             this.txtContactName.Size = new System.Drawing.Size(209, 20);
             this.txtContactName.TabIndex = 8;
+            this.txtContactName.TextChanged += new System.EventHandler(this.TxtContactName_TextChanged);
             // 
             // txtContactEmail
             // 
@@ -140,6 +142,7 @@ namespace AwayDayPlanner
             this.txtContactEmail.Name = "txtContactEmail";
             this.txtContactEmail.Size = new System.Drawing.Size(209, 20);
             this.txtContactEmail.TabIndex = 9;
+            this.txtContactEmail.TextChanged += new System.EventHandler(this.TxtContactEmail_TextChanged);
             // 
             // txtContactNumber
             // 
@@ -147,6 +150,7 @@ namespace AwayDayPlanner
             this.txtContactNumber.Name = "txtContactNumber";
             this.txtContactNumber.Size = new System.Drawing.Size(209, 20);
             this.txtContactNumber.TabIndex = 10;
+            this.txtContactNumber.TextChanged += new System.EventHandler(this.TxtContactNumber_TextChanged);
             // 
             // txtCompany
             // 
@@ -154,6 +158,7 @@ namespace AwayDayPlanner
             this.txtCompany.Name = "txtCompany";
             this.txtCompany.Size = new System.Drawing.Size(209, 20);
             this.txtCompany.TabIndex = 11;
+            this.txtCompany.TextChanged += new System.EventHandler(this.TxtCompany_TextChanged);
             // 
             // txtDepartment
             // 
@@ -161,6 +166,7 @@ namespace AwayDayPlanner
             this.txtDepartment.Name = "txtDepartment";
             this.txtDepartment.Size = new System.Drawing.Size(209, 20);
             this.txtDepartment.TabIndex = 12;
+            this.txtDepartment.TextChanged += new System.EventHandler(this.TxtDepartment_TextChanged);
             // 
             // txtBuildingNameNumber
             // 
@@ -168,6 +174,7 @@ namespace AwayDayPlanner
             this.txtBuildingNameNumber.Name = "txtBuildingNameNumber";
             this.txtBuildingNameNumber.Size = new System.Drawing.Size(209, 20);
             this.txtBuildingNameNumber.TabIndex = 13;
+            this.txtBuildingNameNumber.TextChanged += new System.EventHandler(this.TxtBuildingNameNumber_TextChanged);
             // 
             // txtCity
             // 
@@ -175,6 +182,7 @@ namespace AwayDayPlanner
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(209, 20);
             this.txtCity.TabIndex = 14;
+            this.txtCity.TextChanged += new System.EventHandler(this.TxtCity_TextChanged);
             // 
             // txtPostcode
             // 
@@ -182,6 +190,7 @@ namespace AwayDayPlanner
             this.txtPostcode.Name = "txtPostcode";
             this.txtPostcode.Size = new System.Drawing.Size(209, 20);
             this.txtPostcode.TabIndex = 15;
+            this.txtPostcode.TextChanged += new System.EventHandler(this.TxtPostcode_TextChanged);
             // 
             // groupBox1
             // 
@@ -240,18 +249,30 @@ namespace AwayDayPlanner
             // btnStartEstimate
             // 
             this.btnStartEstimate.Enabled = false;
-            this.btnStartEstimate.Location = new System.Drawing.Point(212, 503);
+            this.btnStartEstimate.Location = new System.Drawing.Point(295, 497);
             this.btnStartEstimate.Name = "btnStartEstimate";
             this.btnStartEstimate.Size = new System.Drawing.Size(102, 38);
             this.btnStartEstimate.TabIndex = 20;
             this.btnStartEstimate.Text = "Start Estimate";
             this.btnStartEstimate.UseVisualStyleBackColor = true;
             // 
+            // btnSave
+            // 
+            this.btnSave.Enabled = false;
+            this.btnSave.Location = new System.Drawing.Point(93, 497);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(86, 38);
+            this.btnSave.TabIndex = 21;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // ValidateClientDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(510, 594);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnStartEstimate);
             this.Controls.Add(this.chkVerify);
             this.Controls.Add(this.gbAddress);
@@ -294,5 +315,6 @@ namespace AwayDayPlanner
         private System.Windows.Forms.GroupBox gbAddress;
         private System.Windows.Forms.CheckBox chkVerify;
         private System.Windows.Forms.Button btnStartEstimate;
+        private System.Windows.Forms.Button btnSave;
     }
 }

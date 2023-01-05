@@ -28,7 +28,7 @@ namespace AwayDayPlanner
          *        ################################################################
          *        create a save changes button
         */
-        
+
         private void ClientSearch_Load(object sender, EventArgs e)
         {
             Connection = new SqlConnection(Properties.Settings.Default.ClientsDatabase);
@@ -53,7 +53,7 @@ namespace AwayDayPlanner
             dgvClientsList.AllowUserToAddRows = false;
             dgvClientsList.Columns["ClientID"].Width = -1;
             for (int i = 0; i < dgvClientsList.ColumnCount; i++)
-                dgvClientsList.Columns[i].ReadOnly = true;           
+                dgvClientsList.Columns[i].ReadOnly = true;
         }
 
         private void DgvClientsList_CellContentDoubleClick(Object sender, DataGridViewCellEventArgs e)
@@ -74,7 +74,7 @@ namespace AwayDayPlanner
             this.Hide();
             validateClientDetails.ShowDialog();
             this.Show();
-            
+
         }
 
         private void TxtCompanySearch_TextChanged(object sender, EventArgs e)
@@ -85,6 +85,19 @@ namespace AwayDayPlanner
         private void TxtClientSearch_TextChanged(object sender, EventArgs e)
         {
             (dgvClientsList.DataSource as DataTable).DefaultView.RowFilter = string.Format("ContactName LIKE '{0}%'", txtClientSearch.Text);
+        }
+
+        private void btnAddNewClient_Click(object sender, EventArgs e)
+        {
+            ValidateClientDetails validateClientDetails = new ValidateClientDetails();
+            this.Hide();
+            validateClientDetails.ShowDialog();
+            this.Show();
+        }
+
+        private void btnViewClient_Click(object sender, EventArgs e)
+        {
+            RowSelected(dgvClientsList.CurrentCell.RowIndex);
         }
     }
 }
