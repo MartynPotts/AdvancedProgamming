@@ -9,7 +9,7 @@ namespace AwayDayPlanner
 {
     public partial class Context : DbContext
     {
-        public Context() : base("name=AwayDayPlanner.Properties.Settings.ClientsDatabase")
+        public Context() : base("AwayDayPlanner.Properties.Settings.ClientsDatabase")
         {
             Database.SetInitializer<Context>(new CreateDatabaseIfNotExists<Context>());
             this.Configuration.ProxyCreationEnabled = false; 

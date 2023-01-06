@@ -50,7 +50,7 @@ namespace AwayDayPlanner
             this.gbAddress = new System.Windows.Forms.GroupBox();
             this.chkVerify = new System.Windows.Forms.CheckBox();
             this.btnStartEstimate = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.btnAddNewClient = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.gbAddress.SuspendLayout();
@@ -249,30 +249,31 @@ namespace AwayDayPlanner
             // btnStartEstimate
             // 
             this.btnStartEstimate.Enabled = false;
-            this.btnStartEstimate.Location = new System.Drawing.Point(295, 497);
+            this.btnStartEstimate.Location = new System.Drawing.Point(386, 497);
             this.btnStartEstimate.Name = "btnStartEstimate";
             this.btnStartEstimate.Size = new System.Drawing.Size(102, 38);
             this.btnStartEstimate.TabIndex = 20;
             this.btnStartEstimate.Text = "Start Estimate";
             this.btnStartEstimate.UseVisualStyleBackColor = true;
+            this.btnStartEstimate.Click += new System.EventHandler(this.BtnStartEstimate_Click);
             // 
-            // btnSave
+            // btnAddNewClient
             // 
-            this.btnSave.Enabled = false;
-            this.btnSave.Location = new System.Drawing.Point(93, 497);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(86, 38);
-            this.btnSave.TabIndex = 21;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
+            this.btnAddNewClient.Enabled = false;
+            this.btnAddNewClient.Location = new System.Drawing.Point(82, 497);
+            this.btnAddNewClient.Name = "btnAddNewClient";
+            this.btnAddNewClient.Size = new System.Drawing.Size(86, 38);
+            this.btnAddNewClient.TabIndex = 21;
+            this.btnAddNewClient.Text = "Add Client";
+            this.btnAddNewClient.UseVisualStyleBackColor = true;
+            this.btnAddNewClient.Click += new System.EventHandler(this.BtnAddNewClient_Click);
             // 
             // ValidateClientDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(510, 594);
-            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnAddNewClient);
             this.Controls.Add(this.btnStartEstimate);
             this.Controls.Add(this.chkVerify);
             this.Controls.Add(this.gbAddress);
@@ -315,6 +316,6 @@ namespace AwayDayPlanner
         private System.Windows.Forms.GroupBox gbAddress;
         private System.Windows.Forms.CheckBox chkVerify;
         private System.Windows.Forms.Button btnStartEstimate;
-        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnAddNewClient;
     }
 }

@@ -83,7 +83,7 @@ namespace AwayDayPlanner
 
         private void EnableSaveButton()
         {
-            btnSave.Enabled = true;
+            btnAddNewClient.Enabled = true;
         }
 
         private void TxtContactEmail_TextChanged(object sender, EventArgs e)
@@ -121,49 +121,55 @@ namespace AwayDayPlanner
             EnableSaveButton();
         }
 
-        private void BtnSave_Click(object sender, EventArgs e)
+        private void BtnAddNewClient_Click(object sender, EventArgs e)
         {
-            using (var context = new Context())
+            if (ClientID !=0)
             {
-                var CityList = context.Cities.ToList<City>();
-                City city = new City();
-                city.CityName = txtCity.Text.ToString();
-                context.Cities.Add(city);
-                context.SaveChanges();
+                btnAddNewClient.Enabled = true;
+                using (var context = new Context())
+                {
+                    var CityList = context.Cities.ToList<City>();
+                    City city = new City();
+                    city.CityName = txtCity.Text.ToString();
 
-                var AddressList = context.Addresses.ToList<Address>();
-                Address address = new Address();
-                address.BuildingNameNumber = txtBuildingNameNumber.Text.ToString();
-                address.Postcode = txtPostcode.Text.ToString();
-                address.CityID = city.CityID;
+                    var AddressList = context.Addresses.ToList<Address>();
+                    Address address = new Address();
+                    address.BuildingNameNumber = txtBuildingNameNumber.Text.ToString();
+                    address.Postcode = txtPostcode.Text.ToString();
+                    address.CityID = city.CityID;
 
+                    var CompanyList = context.Companies.ToList<Company>();
+                    Company company = new Company();
+                    company.CompanyName = txtCompany.Text.ToString();
 
+                    var DepartmentList = context.Departments.ToList<Department>();
+                    Department department = new Department();
+                    department.DepartmentName = txtDepartment.Text.ToString();
 
-                var CompanyList = context.Companies.ToList<Company>();
-                Company company = new Company();
-                company.CompanyName = txtCompany.Text.ToString();
+                    var ClientList = context.Clients.ToList<Client>();
+                    Client client = new Client();
+                    client.ContactName = txtContactName.Text.ToString();
+                    client.ContactEmail = txtContactEmail.Text.ToString();
+                    client.ContactPhoneNumber = txtContactNumber.Text.ToString();
+                    client.AddressID = address.AddressID;
+                    client.CompanyID = company.CompanyID;
+                    client.DepartmentID = department.DepartmentID;
 
-                var DepartmentList = context.Departments.ToList<Department>();
-                Department department = new Department();
-                department.DepartmentName = txtDepartment.Text.ToString();
-
-                var ClientList = context.Clients.ToList<Client>();
-                Client client = new Client();
-                client.ContactName = txtContactName.Text.ToString();
-                client.ContactEmail = txtContactEmail.Text.ToString();
-                client.ContactPhoneNumber = txtContactNumber.Text.ToString();
-                client.AddressID = address.AddressID;
-                client.CompanyID = company.CompanyID;
-                client.DepartmentID = department.DepartmentID;
-
-                
-                context.Addresses.Add(address);
-                context.Companies.Add(company);
-                context.Departments.Add(department);
-                context.Clients.Add(client);
-                context.SaveChanges();
-
+                    context.Cities.Add(city);
+                    context.Addresses.Add(address);
+                    context.Companies.Add(company);
+                    context.Departments.Add(department);
+                    context.Clients.Add(client);
+                    context.SaveChanges();
+                    this.Hide();
+                }
             }
+            
+        }
+
+        private void BtnStartEstimate_Click(object sender, EventArgs e)
+        {
+            //SelectOptionsForm();
         }
     }
 }

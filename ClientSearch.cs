@@ -32,13 +32,11 @@ namespace AwayDayPlanner
         private void ClientSearch_Load(object sender, EventArgs e)
         {
             Connection = new SqlConnection(Properties.Settings.Default.ClientsDatabase);
-
             String allTableSQL = "SELECT * FROM Address; SELECT * FROM CITY; SELECT * FROM Client; " +
                 "SELECT * FROM Company; SELECT * FROM Department;";
             allTables = new SqlDataAdapter(allTableSQL, Connection);
             Tables = new DataSet("Clients");
             allTables.Fill(Tables);
-
             string JoinTable = "SELECT ClientID, ContactName,ContactEmail,ContactPhoneNumber,CompanyName,DepartmentName, BuildingNameNumber, CityName, Postcode FROM Client " +
                 "LEFT JOIN Company ON Client.CompanyID = Company.CompanyID " +
                 "LEFT JOIN Department ON Client.DepartmentID = Department.DepartmentID " +
@@ -47,11 +45,10 @@ namespace AwayDayPlanner
             SqlDataAdapter Join = new SqlDataAdapter(JoinTable, Connection);
             ClientsTable = new DataSet("Join");
             Join.Fill(ClientsTable);
-
             dgvClientsList.DataSource = ClientsTable.Tables[0];
             dgvClientsList.AllowUserToDeleteRows = false;
             dgvClientsList.AllowUserToAddRows = false;
-            dgvClientsList.Columns["ClientID"].Width = 1;
+            dgvClientsList.Columns["ClientID"].Width = -1;
             for (int i = 0; i < dgvClientsList.ColumnCount; i++)
                 dgvClientsList.Columns[i].ReadOnly = true;
         }
@@ -72,6 +69,7 @@ namespace AwayDayPlanner
             int clientID = dr.Field<int>(0);
             ValidateClientDetails validateClientDetails = new ValidateClientDetails(ClientsTable, clientID);
             this.Hide();
+
             validateClientDetails.ShowDialog();
             this.Show();
 
@@ -93,11 +91,6 @@ namespace AwayDayPlanner
             this.Hide();
             validateClientDetails.ShowDialog();
             this.Show();
-        }
-
-        private void btnViewClient_Click(object sender, EventArgs e)
-        {
-            RowSelected(dgvClientsList.CurrentCell.RowIndex);
         }
     }
 }

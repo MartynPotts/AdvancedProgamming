@@ -58,6 +58,8 @@ namespace AwayDayPlanner
             this.dgvClientsList.ReadOnly = true;
             this.dgvClientsList.Size = new System.Drawing.Size(747, 257);
             this.dgvClientsList.TabIndex = 2;
+            this.dgvClientsList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvClientsList_CellContentClick);
+            this.dgvClientsList.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvClientsList_CellContentDoubleClick);
             // 
             // lblClientName
             // 
