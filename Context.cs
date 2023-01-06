@@ -9,9 +9,9 @@ namespace AwayDayPlanner
 {
     public partial class Context : DbContext
     {
-        public Context() : base("name=conString")
+        public Context() : base("AwayDayPlanner.Properties.Settings.ClientsDatabase")
         {
-           // Database.SetInitializer(new MigrateDatabaseToLatestVersion<>)
+            Database.SetInitializer<Context>(new CreateDatabaseIfNotExists<Context>());
             this.Configuration.ProxyCreationEnabled = false; 
             this.Configuration.LazyLoadingEnabled = false;
         }
@@ -19,7 +19,7 @@ namespace AwayDayPlanner
         public DbSet<Client> Clients { get; set; }
         public DbSet<Company> Companies { get; set; }
         public DbSet<Address> Addresses { get; set; }
-        public DbSet<City> City { get; set; }
+        public DbSet<City> Cities { get; set; }
         public DbSet<Department> Departments { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
