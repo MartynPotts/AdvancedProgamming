@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -120,38 +121,23 @@ namespace AwayDayPlanner
             EnableSaveButton();
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void BtnSave_Click(object sender, EventArgs e)
         {
             using (var context = new Context())
             {
-
-                var city = new City
-                { 
-                    CityName = txtCity.Text 
-                };
-                context.City.Add(city);
-                context.SaveChanges();
-
-                var address = new Address
-                {
-                    BuildingNameNumber = txtBuildingNameNumber.Text,
-                    CityID = city.CityID,
-                    Postcode = txtPostcode.Text,
-                };
-                context.Addresses.Add(address);
-                context.SaveChanges();
-                this.Hide();
-
-                /*
-                var CityList = context.City.ToList<City>();
+                var CityList = context.Cities.ToList<City>();
                 City city = new City();
                 city.CityName = txtCity.Text.ToString();
+                context.Cities.Add(city);
+                context.SaveChanges();
 
                 var AddressList = context.Addresses.ToList<Address>();
                 Address address = new Address();
                 address.BuildingNameNumber = txtBuildingNameNumber.Text.ToString();
                 address.Postcode = txtPostcode.Text.ToString();
                 address.CityID = city.CityID;
+
+
 
                 var CompanyList = context.Companies.ToList<Company>();
                 Company company = new Company();
@@ -170,14 +156,13 @@ namespace AwayDayPlanner
                 client.CompanyID = company.CompanyID;
                 client.DepartmentID = department.DepartmentID;
 
-                context.City.Add(city);
+                
                 context.Addresses.Add(address);
                 context.Companies.Add(company);
                 context.Departments.Add(department);
                 context.Clients.Add(client);
                 context.SaveChanges();
-                this.Hide();
-                */
+
             }
         }
     }

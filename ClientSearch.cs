@@ -51,7 +51,7 @@ namespace AwayDayPlanner
             dgvClientsList.DataSource = ClientsTable.Tables[0];
             dgvClientsList.AllowUserToDeleteRows = false;
             dgvClientsList.AllowUserToAddRows = false;
-            dgvClientsList.Columns["ClientID"].Width = -1;
+            dgvClientsList.Columns["ClientID"].Width = 1;
             for (int i = 0; i < dgvClientsList.ColumnCount; i++)
                 dgvClientsList.Columns[i].ReadOnly = true;
         }
