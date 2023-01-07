@@ -171,5 +171,10 @@ namespace AwayDayPlanner
         {
             //SelectOptionsForm();
         }
+
+        private void gbAddress_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
