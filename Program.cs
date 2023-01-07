@@ -17,7 +17,7 @@ namespace AwayDayPlanner
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ClientSearch());
+            Application.Run(new ChooseOptionsForm());
 
         }
 
