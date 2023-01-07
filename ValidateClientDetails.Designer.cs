@@ -59,152 +59,136 @@ namespace AwayDayPlanner
             // lblContactName
             // 
             this.lblContactName.AutoSize = true;
-            this.lblContactName.Location = new System.Drawing.Point(20, 50);
-            this.lblContactName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblContactName.Location = new System.Drawing.Point(15, 41);
             this.lblContactName.Name = "lblContactName";
-            this.lblContactName.Size = new System.Drawing.Size(97, 17);
+            this.lblContactName.Size = new System.Drawing.Size(75, 13);
             this.lblContactName.TabIndex = 0;
             this.lblContactName.Text = "Contact Name";
             // 
             // lblContactEmail
             // 
             this.lblContactEmail.AutoSize = true;
-            this.lblContactEmail.Location = new System.Drawing.Point(20, 82);
-            this.lblContactEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblContactEmail.Location = new System.Drawing.Point(15, 67);
             this.lblContactEmail.Name = "lblContactEmail";
-            this.lblContactEmail.Size = new System.Drawing.Size(94, 17);
+            this.lblContactEmail.Size = new System.Drawing.Size(72, 13);
             this.lblContactEmail.TabIndex = 1;
             this.lblContactEmail.Text = "Contact Email";
             // 
             // lblContactNumber
             // 
             this.lblContactNumber.AutoSize = true;
-            this.lblContactNumber.Location = new System.Drawing.Point(20, 114);
-            this.lblContactNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblContactNumber.Location = new System.Drawing.Point(15, 93);
             this.lblContactNumber.Name = "lblContactNumber";
-            this.lblContactNumber.Size = new System.Drawing.Size(110, 17);
+            this.lblContactNumber.Size = new System.Drawing.Size(84, 13);
             this.lblContactNumber.TabIndex = 2;
             this.lblContactNumber.Text = "Contact Number";
             // 
             // lblCompany
             // 
             this.lblCompany.AutoSize = true;
-            this.lblCompany.Location = new System.Drawing.Point(28, 39);
-            this.lblCompany.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCompany.Location = new System.Drawing.Point(21, 32);
             this.lblCompany.Name = "lblCompany";
-            this.lblCompany.Size = new System.Drawing.Size(67, 17);
+            this.lblCompany.Size = new System.Drawing.Size(51, 13);
             this.lblCompany.TabIndex = 3;
             this.lblCompany.Text = "Company";
             // 
             // lblDepartment
             // 
             this.lblDepartment.AutoSize = true;
-            this.lblDepartment.Location = new System.Drawing.Point(28, 71);
-            this.lblDepartment.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDepartment.Location = new System.Drawing.Point(21, 58);
             this.lblDepartment.Name = "lblDepartment";
-            this.lblDepartment.Size = new System.Drawing.Size(82, 17);
+            this.lblDepartment.Size = new System.Drawing.Size(62, 13);
             this.lblDepartment.TabIndex = 4;
             this.lblDepartment.Text = "Department";
             // 
             // lblBuildingNameNumber
             // 
             this.lblBuildingNameNumber.AutoSize = true;
-            this.lblBuildingNameNumber.Location = new System.Drawing.Point(19, 36);
-            this.lblBuildingNameNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblBuildingNameNumber.Location = new System.Drawing.Point(14, 29);
             this.lblBuildingNameNumber.Name = "lblBuildingNameNumber";
-            this.lblBuildingNameNumber.Size = new System.Drawing.Size(153, 17);
+            this.lblBuildingNameNumber.Size = new System.Drawing.Size(117, 13);
             this.lblBuildingNameNumber.TabIndex = 5;
             this.lblBuildingNameNumber.Text = "Building Name/Number";
             // 
             // lblCity
             // 
             this.lblCity.AutoSize = true;
-            this.lblCity.Location = new System.Drawing.Point(19, 68);
-            this.lblCity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCity.Location = new System.Drawing.Point(14, 55);
             this.lblCity.Name = "lblCity";
-            this.lblCity.Size = new System.Drawing.Size(31, 17);
+            this.lblCity.Size = new System.Drawing.Size(24, 13);
             this.lblCity.TabIndex = 6;
             this.lblCity.Text = "City";
             // 
             // lblPostcode
             // 
             this.lblPostcode.AutoSize = true;
-            this.lblPostcode.Location = new System.Drawing.Point(19, 100);
-            this.lblPostcode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPostcode.Location = new System.Drawing.Point(14, 81);
             this.lblPostcode.Name = "lblPostcode";
-            this.lblPostcode.Size = new System.Drawing.Size(67, 17);
+            this.lblPostcode.Size = new System.Drawing.Size(52, 13);
             this.lblPostcode.TabIndex = 7;
             this.lblPostcode.Text = "Postcode";
             // 
             // txtContactName
             // 
-            this.txtContactName.Location = new System.Drawing.Point(201, 50);
-            this.txtContactName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtContactName.Location = new System.Drawing.Point(151, 41);
             this.txtContactName.Name = "txtContactName";
-            this.txtContactName.Size = new System.Drawing.Size(277, 22);
+            this.txtContactName.Size = new System.Drawing.Size(209, 20);
             this.txtContactName.TabIndex = 8;
             this.txtContactName.TextChanged += new System.EventHandler(this.TxtContactName_TextChanged);
             // 
             // txtContactEmail
             // 
-            this.txtContactEmail.Location = new System.Drawing.Point(201, 82);
-            this.txtContactEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtContactEmail.Location = new System.Drawing.Point(151, 67);
             this.txtContactEmail.Name = "txtContactEmail";
-            this.txtContactEmail.Size = new System.Drawing.Size(277, 22);
+            this.txtContactEmail.Size = new System.Drawing.Size(209, 20);
             this.txtContactEmail.TabIndex = 9;
             this.txtContactEmail.TextChanged += new System.EventHandler(this.TxtContactEmail_TextChanged);
             // 
             // txtContactNumber
             // 
-            this.txtContactNumber.Location = new System.Drawing.Point(201, 114);
-            this.txtContactNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtContactNumber.Location = new System.Drawing.Point(151, 93);
             this.txtContactNumber.Name = "txtContactNumber";
-            this.txtContactNumber.Size = new System.Drawing.Size(277, 22);
+            this.txtContactNumber.Size = new System.Drawing.Size(209, 20);
             this.txtContactNumber.TabIndex = 10;
             this.txtContactNumber.TextChanged += new System.EventHandler(this.TxtContactNumber_TextChanged);
             // 
             // txtCompany
             // 
-            this.txtCompany.Location = new System.Drawing.Point(201, 39);
-            this.txtCompany.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCompany.Location = new System.Drawing.Point(151, 32);
             this.txtCompany.Name = "txtCompany";
-            this.txtCompany.Size = new System.Drawing.Size(277, 22);
+            this.txtCompany.Size = new System.Drawing.Size(209, 20);
             this.txtCompany.TabIndex = 11;
             this.txtCompany.TextChanged += new System.EventHandler(this.TxtCompany_TextChanged);
             // 
             // txtDepartment
             // 
-            this.txtDepartment.Location = new System.Drawing.Point(201, 71);
-            this.txtDepartment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDepartment.Location = new System.Drawing.Point(151, 58);
             this.txtDepartment.Name = "txtDepartment";
-            this.txtDepartment.Size = new System.Drawing.Size(277, 22);
+            this.txtDepartment.Size = new System.Drawing.Size(209, 20);
             this.txtDepartment.TabIndex = 12;
             this.txtDepartment.TextChanged += new System.EventHandler(this.TxtDepartment_TextChanged);
             // 
             // txtBuildingNameNumber
             // 
-            this.txtBuildingNameNumber.Location = new System.Drawing.Point(201, 36);
-            this.txtBuildingNameNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBuildingNameNumber.Location = new System.Drawing.Point(151, 29);
             this.txtBuildingNameNumber.Name = "txtBuildingNameNumber";
-            this.txtBuildingNameNumber.Size = new System.Drawing.Size(277, 22);
+            this.txtBuildingNameNumber.Size = new System.Drawing.Size(209, 20);
             this.txtBuildingNameNumber.TabIndex = 13;
             this.txtBuildingNameNumber.TextChanged += new System.EventHandler(this.TxtBuildingNameNumber_TextChanged);
             // 
             // txtCity
             // 
-            this.txtCity.Location = new System.Drawing.Point(201, 68);
-            this.txtCity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCity.Location = new System.Drawing.Point(151, 55);
             this.txtCity.Name = "txtCity";
-            this.txtCity.Size = new System.Drawing.Size(277, 22);
+            this.txtCity.Size = new System.Drawing.Size(209, 20);
             this.txtCity.TabIndex = 14;
             this.txtCity.TextChanged += new System.EventHandler(this.TxtCity_TextChanged);
             // 
             // txtPostcode
             // 
-            this.txtPostcode.Location = new System.Drawing.Point(201, 100);
-            this.txtPostcode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPostcode.Location = new System.Drawing.Point(151, 81);
             this.txtPostcode.Name = "txtPostcode";
-            this.txtPostcode.Size = new System.Drawing.Size(277, 22);
+            this.txtPostcode.Size = new System.Drawing.Size(209, 20);
             this.txtPostcode.TabIndex = 15;
             this.txtPostcode.TextChanged += new System.EventHandler(this.TxtPostcode_TextChanged);
             // 
@@ -216,11 +200,9 @@ namespace AwayDayPlanner
             this.groupBox1.Controls.Add(this.lblContactNumber);
             this.groupBox1.Controls.Add(this.lblContactEmail);
             this.groupBox1.Controls.Add(this.lblContactName);
-            this.groupBox1.Location = new System.Drawing.Point(49, 39);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Location = new System.Drawing.Point(37, 32);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(601, 181);
+            this.groupBox1.Size = new System.Drawing.Size(451, 147);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Contact Details";
@@ -231,11 +213,9 @@ namespace AwayDayPlanner
             this.groupBox2.Controls.Add(this.txtCompany);
             this.groupBox2.Controls.Add(this.lblDepartment);
             this.groupBox2.Controls.Add(this.lblCompany);
-            this.groupBox2.Location = new System.Drawing.Point(49, 245);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Location = new System.Drawing.Point(37, 199);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox2.Size = new System.Drawing.Size(601, 129);
+            this.groupBox2.Size = new System.Drawing.Size(451, 105);
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Company Details";
@@ -248,23 +228,19 @@ namespace AwayDayPlanner
             this.gbAddress.Controls.Add(this.lblPostcode);
             this.gbAddress.Controls.Add(this.lblCity);
             this.gbAddress.Controls.Add(this.lblBuildingNameNumber);
-            this.gbAddress.Location = new System.Drawing.Point(49, 402);
-            this.gbAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbAddress.Location = new System.Drawing.Point(37, 327);
             this.gbAddress.Name = "gbAddress";
-            this.gbAddress.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gbAddress.Size = new System.Drawing.Size(601, 153);
+            this.gbAddress.Size = new System.Drawing.Size(451, 124);
             this.gbAddress.TabIndex = 18;
             this.gbAddress.TabStop = false;
             this.gbAddress.Text = "Address";
-            this.gbAddress.Enter += new System.EventHandler(this.gbAddress_Enter);
             // 
             // chkVerify
             // 
             this.chkVerify.AutoSize = true;
-            this.chkVerify.Location = new System.Drawing.Point(192, 562);
-            this.chkVerify.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkVerify.Location = new System.Drawing.Point(144, 457);
             this.chkVerify.Name = "chkVerify";
-            this.chkVerify.Size = new System.Drawing.Size(334, 21);
+            this.chkVerify.Size = new System.Drawing.Size(253, 17);
             this.chkVerify.TabIndex = 19;
             this.chkVerify.Text = "I have verified these details and they are correct";
             this.chkVerify.UseVisualStyleBackColor = true;
@@ -273,10 +249,9 @@ namespace AwayDayPlanner
             // btnStartEstimate
             // 
             this.btnStartEstimate.Enabled = false;
-            this.btnStartEstimate.Location = new System.Drawing.Point(515, 612);
-            this.btnStartEstimate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStartEstimate.Location = new System.Drawing.Point(386, 497);
             this.btnStartEstimate.Name = "btnStartEstimate";
-            this.btnStartEstimate.Size = new System.Drawing.Size(136, 47);
+            this.btnStartEstimate.Size = new System.Drawing.Size(102, 38);
             this.btnStartEstimate.TabIndex = 20;
             this.btnStartEstimate.Text = "Start Estimate";
             this.btnStartEstimate.UseVisualStyleBackColor = true;
@@ -285,10 +260,9 @@ namespace AwayDayPlanner
             // btnAddNewClient
             // 
             this.btnAddNewClient.Enabled = false;
-            this.btnAddNewClient.Location = new System.Drawing.Point(109, 612);
-            this.btnAddNewClient.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddNewClient.Location = new System.Drawing.Point(82, 497);
             this.btnAddNewClient.Name = "btnAddNewClient";
-            this.btnAddNewClient.Size = new System.Drawing.Size(115, 47);
+            this.btnAddNewClient.Size = new System.Drawing.Size(86, 38);
             this.btnAddNewClient.TabIndex = 21;
             this.btnAddNewClient.Text = "Add Client";
             this.btnAddNewClient.UseVisualStyleBackColor = true;
@@ -296,16 +270,15 @@ namespace AwayDayPlanner
             // 
             // ValidateClientDetails
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(680, 731);
+            this.ClientSize = new System.Drawing.Size(510, 594);
             this.Controls.Add(this.btnAddNewClient);
             this.Controls.Add(this.btnStartEstimate);
             this.Controls.Add(this.chkVerify);
             this.Controls.Add(this.gbAddress);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ValidateClientDetails";
             this.Text = "ValidateClientDetails";
             this.Load += new System.EventHandler(this.ValidateClientDetails_Load);
