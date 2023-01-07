@@ -100,6 +100,10 @@
     <Compile Include="Company.cs" />
     <Compile Include="Context.cs" />
     <Compile Include="Department.cs" />
+    <Compile Include="Migrations\202301062236364_checkconfig1.cs" />
+    <Compile Include="Migrations\202301062236364_checkconfig1.designer.cs">
+      <DependentUpon>202301062236364_checkconfig1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -115,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ClientSearch.resx">
       <DependentUpon>ClientSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301062236364_checkconfig1.resx">
+      <DependentUpon>202301062236364_checkconfig1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

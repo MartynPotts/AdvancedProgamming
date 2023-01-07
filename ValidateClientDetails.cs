@@ -169,9 +169,12 @@ namespace AwayDayPlanner
 
         private void BtnStartEstimate_Click(object sender, EventArgs e)
         {
-            ChooseOptionsForm COP = new ChooseOptionsForm();
-            this.Hide();
-            COP.Show();
+            //SelectOptionsForm();
+        }
+
+        private void gbAddress_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
