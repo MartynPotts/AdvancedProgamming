@@ -80,9 +80,11 @@
     <Compile Include="ClientSearch.Designer.cs">
       <DependentUpon>ClientSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClientSearchHandler.cs" />
     <Compile Include="Company.cs" />
     <Compile Include="Context.cs" />
     <Compile Include="Department.cs" />
+    <Compile Include="IClientSearchGUI.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,6 +94,7 @@
     <Compile Include="ValidateClientDetails.Designer.cs">
       <DependentUpon>ValidateClientDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="ValidateClientHandler.cs" />
     <EmbeddedResource Include="ClientSearch.resx">
       <DependentUpon>ClientSearch.cs</DependentUpon>
     </EmbeddedResource>

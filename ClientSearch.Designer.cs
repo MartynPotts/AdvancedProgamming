@@ -95,7 +95,7 @@ namespace AwayDayPlanner
             this.btnAddNewClient.TabIndex = 6;
             this.btnAddNewClient.Text = "Add New Client";
             this.btnAddNewClient.UseVisualStyleBackColor = true;
-            this.btnAddNewClient.Click += new System.EventHandler(this.btnAddNewClient_Click);
+            this.btnAddNewClient.Click += new System.EventHandler(this.BtnAddNewClient_Click);
             // 
             // ClientSearch
             // 

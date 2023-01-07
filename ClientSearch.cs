@@ -24,11 +24,6 @@ namespace AwayDayPlanner
             InitializeComponent();
         }
 
-        /*  TODO: create an add new client button to form
-         *        ################################################################
-         *        create a save changes button
-        */
-
         private void ClientSearch_Load(object sender, EventArgs e)
         {
             Connection = new SqlConnection(Properties.Settings.Default.ClientsDatabase);
