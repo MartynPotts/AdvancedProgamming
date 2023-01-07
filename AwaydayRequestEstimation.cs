@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace AwayDayPlanner
 {
-    
+    [Table("AwayDayDetails")]
     public class AwaydayRequestEstimation
     {
-        [Key]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
      public int clientID
         {
             get;

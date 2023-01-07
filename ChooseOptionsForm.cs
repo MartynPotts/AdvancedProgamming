@@ -11,14 +11,14 @@ using System.Windows.Forms;
 
 namespace AwayDayPlanner
 {
-    public partial class ChooseOptionsForm : MetroFramework.Forms.MetroForm
+    public partial class ChooseOptionsForm : Form
     {
-        ChooseOptionsContext db;
+        Context db;
         string bookingType;
         string fromDate;
         int plannedDays;
-        int attendeescount ;
-        string facilityDescription;
+        int attendeescount;
+        string facility_Addon;
 
 
         public ChooseOptionsForm()
@@ -26,34 +26,11 @@ namespace AwayDayPlanner
             InitializeComponent();
         }
 
-        private void metroLabel1_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void metroLabel4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void metroLabel5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void metroDateTime1_ValueChanged(object sender, EventArgs e)
-        {
-            this.fromDate = metroDateTime1.Text.ToString();
-        }
-
-        private void metroPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void ChooseOptions_Load(object sender, EventArgs e)
         {
-            db = new ChooseOptionsContext();
+            db = new Context();
             {
                 awaydayRequestEstimationBindingSource.DataSource = db.RequestEstimationsdb.ToList();
 
@@ -61,33 +38,82 @@ namespace AwayDayPlanner
 
         }
 
-        private void metroGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+        private void label1_Click(object sender, EventArgs e)
         {
-            AwaydayRequestEstimation obj =awaydayRequestEstimationBindingSource.Current as AwaydayRequestEstimation;
+
         }
-      
-        
+
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /*Exits from the application upon button click*/
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            fromDate = dateTimePicker1.Text.ToString();
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            bookingType = comboBox1.Text.ToString();
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            plannedDays = Convert.ToInt32(comboBox2.Text);
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            attendeescount = Convert.ToInt32(comboBox3.Text);
+        }
+
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            facility_Addon = comboBox4.Text.ToString();
+        }
+
+
         /*
           Upon Entering enquiry details ,data values are binded to context object and saves into database.
         */
-        private void metroButton1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-
             awaydayRequestEstimationBindingSource.Add(new AwaydayRequestEstimation());
             awaydayRequestEstimationBindingSource.MoveLast();
-            metroDateTime1.Focus();
+            dateTimePicker1.Focus();
             using (ChooseOptionsContext db = new ChooseOptionsContext())
             {
-               
+
                 AwaydayRequestEstimation obj = awaydayRequestEstimationBindingSource.Current as AwaydayRequestEstimation;
-                
+
                 //Adding the values to the database object
                 obj.plannedFromDate = fromDate;
                 obj.bookingServiceType = bookingType;
                 obj.plannedAwayDays = plannedDays;
                 obj.eventattendeescount = attendeescount;
-                obj.AdditionalFacilityDescription = facilityDescription;
-               
+                obj.AdditionalFacilityDescription = facility_Addon;
+
                 if (obj != null)
                 {
                     if (db.Entry<AwaydayRequestEstimation>(obj).State == EntityState.Detached)
@@ -96,13 +122,13 @@ namespace AwayDayPlanner
                         db.Entry<AwaydayRequestEstimation>(obj).State = EntityState.Added;
                     else
                         db.Entry<AwaydayRequestEstimation>(obj).State = EntityState.Modified;
-                   
+
                     db.SaveChanges();
 
-                    MetroFramework.MetroMessageBox.Show(this, "Received Initial Enquiry Form successfully!! Within 24hrs, You will receive an email with further details to your registered email !!");
+                    MessageBox.Show(this, "Received Initial Enquiry Form successfully!! Within 24hrs, You will receive an email with further details to your registered email !!");
 
-                    metroGrid1.Refresh();
-                    
+
+
 
                 }
 
@@ -110,30 +136,9 @@ namespace AwayDayPlanner
 
         }
 
-        private void metroComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void label6_Click(object sender, EventArgs e)
         {
-            bookingType = metroComboBox1.Text.ToString();
-        }
 
-        private void metroComboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            plannedDays = Convert.ToInt32(metroComboBox2.Text);
-        }
-
-        private void metroComboBox3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            attendeescount = Convert.ToInt32(metroComboBox3.Text);
-        }
-
-        private void metroTextBox1_Click(object sender, EventArgs e)
-        {
-            facilityDescription = metroTextBox1.Text;
-        }
-
-        /*Exits from the application upon button click*/
-        private void metroButton2_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

@@ -175,7 +175,8 @@ namespace AwayDayPlanner
         {
             ChooseOptionsForm COP = new ChooseOptionsForm();
             this.Hide();
-            COP.Show();
+            COP.ShowDialog();
+            this.Show();
         }
     }
 }

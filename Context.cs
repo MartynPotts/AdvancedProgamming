@@ -9,7 +9,7 @@ namespace AwayDayPlanner
 {
     public partial class Context : DbContext
     {
-        public Context() : base("AwayDayPlanner.Properties.Settings.ClientsDatabase")
+        public Context() : base("name=Context")
         {
             Database.SetInitializer<Context>(new CreateDatabaseIfNotExists<Context>());
             this.Configuration.ProxyCreationEnabled = false; 
@@ -21,6 +21,11 @@ namespace AwayDayPlanner
         public DbSet<Address> Addresses { get; set; }
         public DbSet<City> Cities { get; set; }
         public DbSet<Department> Departments { get; set; }
+        public DbSet<AwaydayRequestEstimation> RequestEstimationsdb
+        {
+            get;
+            set;
+        }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
