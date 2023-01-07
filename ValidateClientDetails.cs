@@ -123,48 +123,52 @@ namespace AwayDayPlanner
 
         private void BtnAddNewClient_Click(object sender, EventArgs e)
         {
-            if (ClientID !=0)
+
+            btnAddNewClient.Enabled = true;
+            using (var context = new Context())
             {
-                btnAddNewClient.Enabled = true;
-                using (var context = new Context())
-                {
-                    var CityList = context.Cities.ToList<City>();
-                    City city = new City();
-                    city.CityName = txtCity.Text.ToString();
+                var CityList = context.Cities.ToList<City>();
+                City city = new City();
+                city.CityName = txtCity.Text;
+                context.Cities.Add(city);
+                context.SaveChanges();
 
-                    var AddressList = context.Addresses.ToList<Address>();
-                    Address address = new Address();
-                    address.BuildingNameNumber = txtBuildingNameNumber.Text.ToString();
-                    address.Postcode = txtPostcode.Text.ToString();
-                    address.CityID = city.CityID;
+                var AddressList = context.Addresses.ToList<Address>();
+                Address address = new Address();
+                address.BuildingNameNumber = txtBuildingNameNumber.Text;
+                address.Postcode = txtPostcode.Text;
+                address.CityID = city.CityID;
+                context.Addresses.Add(address);
+                context.SaveChanges();
 
-                    var CompanyList = context.Companies.ToList<Company>();
-                    Company company = new Company();
-                    company.CompanyName = txtCompany.Text.ToString();
+                var CompanyList = context.Companies.ToList<Company>();
+                Company company = new Company();
+                company.CompanyName = txtCompany.Text;
+                context.Companies.Add(company);
+                context.SaveChanges();
 
-                    var DepartmentList = context.Departments.ToList<Department>();
-                    Department department = new Department();
-                    department.DepartmentName = txtDepartment.Text.ToString();
+                var DepartmentList = context.Departments.ToList<Department>();
+                Department department = new Department();
+                department.DepartmentName = txtDepartment.Text;
+                context.Departments.Add(department);
+                context.SaveChanges();
 
-                    var ClientList = context.Clients.ToList<Client>();
-                    Client client = new Client();
-                    client.ContactName = txtContactName.Text.ToString();
-                    client.ContactEmail = txtContactEmail.Text.ToString();
-                    client.ContactPhoneNumber = txtContactNumber.Text.ToString();
-                    client.AddressID = address.AddressID;
-                    client.CompanyID = company.CompanyID;
-                    client.DepartmentID = department.DepartmentID;
+                var ClientList = context.Clients.ToList<Client>();
+                Client client = new Client();
+                client.ContactName = txtContactName.Text;
+                client.ContactEmail = txtContactEmail.Text;
+                client.ContactPhoneNumber = txtContactNumber.Text;
+                client.AddressID = address.AddressID;
+                client.CompanyID = company.CompanyID;
+                client.DepartmentID = department.DepartmentID;
 
-                    context.Cities.Add(city);
-                    context.Addresses.Add(address);
-                    context.Companies.Add(company);
-                    context.Departments.Add(department);
-                    context.Clients.Add(client);
-                    context.SaveChanges();
-                    this.Hide();
-                }
+                context.Clients.Add(client);
+                context.SaveChanges();
+                MessageBox.Show("Client has been added to the system");
+                this.Hide();
             }
-            
+
+
         }
 
         private void BtnStartEstimate_Click(object sender, EventArgs e)
