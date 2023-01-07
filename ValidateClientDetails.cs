@@ -169,6 +169,8 @@ namespace AwayDayPlanner
                 context.Clients.Add(client);
                 context.SaveChanges();
                 MessageBox.Show("Client has been added to the system");
+                this.Hide();
+
             }
 
 
