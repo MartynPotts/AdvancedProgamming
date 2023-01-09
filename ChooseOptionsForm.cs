@@ -33,7 +33,7 @@ namespace AwayDayPlanner
             db = new Context();
             {
                 awaydayRequestEstimationBindingSource.DataSource = db.RequestEstimationsdb.ToList();
-
+                
             }
 
         }
@@ -70,29 +70,32 @@ namespace AwayDayPlanner
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             fromDate = dateTimePicker1.Text.ToString();
-
+            Console.WriteLine(fromDate);
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             bookingType = comboBox1.Text.ToString();
+            Console.WriteLine(bookingType);
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             plannedDays = Convert.ToInt32(comboBox2.Text);
+            Console.WriteLine(plannedDays);
         }
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
             attendeescount = Convert.ToInt32(comboBox3.Text);
+            Console.WriteLine(attendeescount);
         }
 
         private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
             facility_Addon = comboBox4.Text.ToString();
+            Console.WriteLine(facility_Addon);
         }
-
 
         /*
           Upon Entering enquiry details ,data values are binded to context object and saves into database.
@@ -102,7 +105,7 @@ namespace AwayDayPlanner
             awaydayRequestEstimationBindingSource.Add(new AwaydayRequestEstimation());
             awaydayRequestEstimationBindingSource.MoveLast();
             dateTimePicker1.Focus();
-            using (ChooseOptionsContext db = new ChooseOptionsContext())
+            using (Context db = new Context())
             {
 
                 AwaydayRequestEstimation obj = awaydayRequestEstimationBindingSource.Current as AwaydayRequestEstimation;

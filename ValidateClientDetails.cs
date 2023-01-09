@@ -49,7 +49,6 @@ namespace AwayDayPlanner
             }
         }
 
-
         public void PopulateFormDetails()
         {
             var query = from Client in Clients.Tables[0].AsEnumerable()
@@ -124,51 +123,52 @@ namespace AwayDayPlanner
         private void BtnAddNewClient_Click(object sender, EventArgs e)
         {
 
-            btnAddNewClient.Enabled = true;
-            using (var context = new Context())
+            if (btnAddNewClient.Enabled == true)
             {
-                var CityList = context.Cities.ToList<City>();
-                City city = new City();
-                city.CityName = txtCity.Text;
-                context.Cities.Add(city);
-                context.SaveChanges();
+                using (var context = new Context())
+                {
+                    var CityList = context.Cities.ToList<City>();
+                    City city = new City();
+                    city.CityName = txtCity.Text;
+                    context.Cities.Add(city);
+                    context.SaveChanges();
 
-                var AddressList = context.Addresses.ToList<Address>();
-                Address address = new Address();
-                address.BuildingNameNumber = txtBuildingNameNumber.Text;
-                address.Postcode = txtPostcode.Text;
-                address.CityID = city.CityID;
-                context.Addresses.Add(address);
-                context.SaveChanges();
+                    var AddressList = context.Addresses.ToList<Address>();
+                    Address address = new Address();
+                    address.BuildingNameNumber = txtBuildingNameNumber.Text;
+                    address.Postcode = txtPostcode.Text;
+                    address.CityID = city.CityID;
+                    context.Addresses.Add(address);
+                    context.SaveChanges();
 
-                var CompanyList = context.Companies.ToList<Company>();
-                Company company = new Company();
-                company.CompanyName = txtCompany.Text;
-                context.Companies.Add(company);
-                context.SaveChanges();
+                    var CompanyList = context.Companies.ToList<Company>();
+                    Company company = new Company();
+                    company.CompanyName = txtCompany.Text;
+                    context.Companies.Add(company);
+                    context.SaveChanges();
 
-                var DepartmentList = context.Departments.ToList<Department>();
-                Department department = new Department();
-                department.DepartmentName = txtDepartment.Text;
-                context.Departments.Add(department);
-                context.SaveChanges();
+                    var DepartmentList = context.Departments.ToList<Department>();
+                    Department department = new Department();
+                    department.DepartmentName = txtDepartment.Text;
+                    context.Departments.Add(department);
+                    context.SaveChanges();
 
-                var ClientList = context.Clients.ToList<Client>();
-                Client client = new Client();
-                client.ContactName = txtContactName.Text;
-                client.ContactEmail = txtContactEmail.Text;
-                client.ContactPhoneNumber = txtContactNumber.Text;
-                client.AddressID = address.AddressID;
-                client.CompanyID = company.CompanyID;
-                client.DepartmentID = department.DepartmentID;
+                    var ClientList = context.Clients.ToList<Client>();
+                    Client client = new Client();
+                    client.ContactName = txtContactName.Text;
+                    client.ContactEmail = txtContactEmail.Text;
+                    client.ContactPhoneNumber = txtContactNumber.Text;
+                    client.AddressID = address.AddressID;
+                    client.CompanyID = company.CompanyID;
+                    client.DepartmentID = department.DepartmentID;
 
-                context.Clients.Add(client);
-                context.SaveChanges();
-                MessageBox.Show("Client has been added to the system");
-                this.Hide();
+                    context.Clients.Add(client);
+                    context.SaveChanges();
+                    MessageBox.Show("Client has been added to the system");
+                    this.Hide();
+                }
+
             }
-
-
         }
 
         private void BtnStartEstimate_Click(object sender, EventArgs e)

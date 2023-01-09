@@ -280,7 +280,7 @@ namespace AwayDayPlanner
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "ValidateClientDetails";
-            this.Text = "ValidateClientDetails";
+            this.Text = "Validate Client Details";
             this.Load += new System.EventHandler(this.ValidateClientDetails_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

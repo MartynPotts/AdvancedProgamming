@@ -23,12 +23,6 @@ namespace AwayDayPlanner
         {
             InitializeComponent();
         }
-
-        /*  TODO: create an add new client button to form
-         *        ################################################################
-         *        create a save changes button
-        */
-
         private void ClientSearch_Load(object sender, EventArgs e)
         {
             Connection = new SqlConnection(Properties.Settings.Default.ClientsDatabase);
@@ -37,6 +31,7 @@ namespace AwayDayPlanner
             allTables = new SqlDataAdapter(allTableSQL, Connection);
             Tables = new DataSet("Clients");
             allTables.Fill(Tables);
+
             string JoinTable = "SELECT ClientID, ContactName,ContactEmail,ContactPhoneNumber,CompanyName,DepartmentName, BuildingNameNumber, CityName, Postcode FROM Client " +
                 "LEFT JOIN Company ON Client.CompanyID = Company.CompanyID " +
                 "LEFT JOIN Department ON Client.DepartmentID = Department.DepartmentID " +
@@ -45,10 +40,10 @@ namespace AwayDayPlanner
             SqlDataAdapter Join = new SqlDataAdapter(JoinTable, Connection);
             ClientsTable = new DataSet("Join");
             Join.Fill(ClientsTable);
+
             dgvClientsList.DataSource = ClientsTable.Tables[0];
             dgvClientsList.AllowUserToDeleteRows = false;
             dgvClientsList.AllowUserToAddRows = false;
-            dgvClientsList.Columns["ClientID"].Width = -1;
             for (int i = 0; i < dgvClientsList.ColumnCount; i++)
                 dgvClientsList.Columns[i].ReadOnly = true;
         }
@@ -65,11 +60,10 @@ namespace AwayDayPlanner
 
         private void RowSelected(int index)
         {
-            DataRow dr = ClientsTable.Tables[0].Rows[index];
-            int clientID = dr.Field<int>(0);
+            int clientID = Convert.ToInt32(ClientsTable.Tables[0].Rows[index]["ClientID"]);
+            Console.WriteLine(clientID);
             ValidateClientDetails validateClientDetails = new ValidateClientDetails(ClientsTable, clientID);
             this.Hide();
-
             validateClientDetails.ShowDialog();
             this.Show();
 
