@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// Author: Martyn Potts StudentID: W19005228
 namespace AwayDayPlanner
 {
     [Table("Department")]

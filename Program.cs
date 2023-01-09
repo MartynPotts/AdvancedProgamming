@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Entity;
 
+// Author: Martyn Potts StudentID: W19005228
+
 namespace AwayDayPlanner
 {
     static class Program

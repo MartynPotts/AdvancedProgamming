@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
+// Author: Martyn Potts StudentID: W19005228
+
 namespace AwayDayPlanner
 {
     [Table("City")]

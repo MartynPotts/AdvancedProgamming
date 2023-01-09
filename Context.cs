@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 
+// Author: Martyn Potts StudentID: W19005228
+
 namespace AwayDayPlanner
 {
     public partial class Context : DbContext

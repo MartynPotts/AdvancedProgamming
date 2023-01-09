@@ -10,6 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+// Author: Martyn Potts StudentID: W19005228
+
 namespace AwayDayPlanner
 {
     public partial class ClientSearch : Form

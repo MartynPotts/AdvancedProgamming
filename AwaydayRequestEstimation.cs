@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// Author: Durgambica Padarthi  StudentID: W21056804
+
 namespace AwayDayPlanner
 {
     [Table("AwayDayDetails")]
